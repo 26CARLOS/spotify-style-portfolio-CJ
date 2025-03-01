@@ -1,9 +1,10 @@
 import Link from "next/link"
+import React from "react"
 
 interface ProjectCardProps {
   title: string
   description: string
-  icon: string
+  icon: string | JSX.Element
   year: string
   category: string
 }

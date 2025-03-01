@@ -8,48 +8,47 @@ import Sidebar from "@/components/sidebar"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ProjectItem from "@/components/project-item"
-
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with React, Node.js, and MongoDB.",
-    tech: ["React", "Node.js", "MongoDB"],
-    duration: "3 months",
-    year: 2023,
+    title: "Dripamics Grail - LMS",
+    description: "Learning Management System built with React and Node.js",
+    tech: ["React", "Node.js", "JavaScript", "MongoDB", "AWS", "Tailwind CSS"], 
+    duration: "1 month",
+    year: 2025,
+    category: "Fullstack",
+    icon: "🎓"
   },
   {
     id: 2,
-    title: "Weather App",
-    description: "React-based weather application with OpenWeather API integration.",
-    tech: ["React", "API Integration"],
+    title: "Innov8 Home Exclusives",
+    description: "Website for a home renovations company built with React.js hosted on AWS Amplify",
+    tech: ["React.js", "AWS Amplify", "Tailwind CSS"],
     duration: "2 weeks",
-    year: 2023,
+    year: 2024,
+    category: "Frontend",
+    icon: "✅"
   },
   {
     id: 3,
-    title: "Task Manager",
-    description: "Productivity tool built with Vue.js and Firebase.",
-    tech: ["Vue.js", "Firebase"],
-    duration: "1 month",
-    year: 2022,
+    title: "Spotify Inspired Portfolio Website",
+    description: "Personal portfolio site built with Next.js and Tailwind CSS",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+    duration: "4 days",
+    year: 2025,
+    category: "Frontend",
+    icon: "🎨"
   },
   {
     id: 4,
-    title: "Portfolio Website",
-    description: "Personal portfolio site built with Next.js and Tailwind CSS.",
-    tech: ["Next.js", "Tailwind CSS"],
-    duration: "3 weeks",
+    title: "Dripanomics Tutorials",
+    description: "Website for a Johannesburg based tutoring company built with React.js",
+    tech: ["React.js", "Node.js", "Express", "MongoDB"],
+    duration: "2 weeks",
     year: 2023,
-  },
-  {
-    id: 5,
-    title: "Blog Platform",
-    description: "Content management system with Node.js and MongoDB.",
-    tech: ["Node.js", "MongoDB", "Express"],
-    duration: "2 months",
-    year: 2022,
-  },
+    category: "Backend",
+    icon: "📝"
+  }
 ]
 
 export default function ProjectsPage() {
@@ -78,7 +77,7 @@ export default function ProjectsPage() {
                 <div>
                   <h4 className="text-sm font-medium text-gray-400 uppercase">Project Playlist</h4>
                   <h1 className="text-5xl font-bold mt-2 mb-4">My Projects</h1>
-                  <p className="text-gray-400">John Smith • 5 projects • 2022-2023</p>
+                  <p className="text-gray-400">Carlos Juma • {projects.length} projects</p>
                 </div>
               </div>
             </section>
