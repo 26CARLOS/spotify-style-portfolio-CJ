@@ -35,9 +35,9 @@ export default function Header() {
           </Button>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
-              <span className="font-bold text-black">JS</span>
+              <span className="font-bold text-black">CJ</span>
             </div>
-            <span className="font-medium">John Smith</span>
+            <span className="font-medium">Carlos Juma</span>
           </div>
         </div>
       </div>

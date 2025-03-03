@@ -2,14 +2,55 @@ import Link from "next/link"
 import Image from "next/image"
 import { Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { GraduationCap } from "lucide-react"
 import Sidebar from "@/components/sidebar"
 import ProjectCard from "@/components/project-card"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import avatar from "@/public/me1.jpg"
+import dripaLogo from "@/public/dripanomics-logo.png"
+import innov8Logo from "@/public/INNOV8.png"
+import dripaStatic from "@/public/dripaStatic.png"
+
+// Mock function to simulate fetching projects data
+function getProjects() {
+  return [
+    {
+      id: "dripamics-grail-lms",
+      title: "Dripamics Grail - LMS",
+      description: "Learning Management System built with React and Node.js",
+      icon: dripaLogo,
+      year: "2025",
+      category: "Fullstack",
+    },
+    {
+      id: "innov8-home-exclusives",
+      title: "Innov8 Home Exclusives",
+      description: "Website for a home renovations company built with React.js hosted on AWS Amplify",
+      icon: innov8Logo,
+      year: "2024",
+      category: "Frontend",
+    },
+    {
+      id: "spotify-style-portfolio",
+      title: "Spotify Inspired Portfolio Website",
+      description: "Personal portfolio site built with Next.js and Tailwind CSS",
+      year: "2025",
+      category: "Frontend",
+    },
+    {
+      id: "dripanomics-tutorials",
+      title: "Dripanomics Tutorials",
+      description: "Website for a Johannesburg based tutoring company built with React.js",
+      icon: dripaStatic,
+      year: "2023",
+      category: "Backend",
+    },
+  ]
+}  
 
 export default function Home() {
+  const projects = getProjects()
+
   return (
     <div className="flex h-svh bg-black text-white overflow-hidden">
       <Sidebar />
@@ -46,40 +87,23 @@ export default function Home() {
 
             <section className="space-y-4">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold">Projects Wrapped</h2>
+                <h2 className="text-2xl font-bold">Recent Projects</h2>
                 <Link href="/projects" className="text-sm text-gray-400 hover:text-white hover:underline">
                   Show all
                 </Link>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <ProjectCard
-                  title="Dripamics Grail - LMS"
-                  description="Learning Management System built with React and Node.js"
-                  icon={<GraduationCap/>}
-                  year="2025"
-                  category="Fullstack"
-                />
-                <ProjectCard
-                  title="Innov8 Home Exclusives"
-                  description="Website for a home renovations company built with React.js hosted on AWS Amplify"
-                  icon="✅"
-                  year="2024"
-                  category="Frontend"
-                />
-                <ProjectCard
-                  title="Spotify Inspired Portflio Website"
-                  description="Personal portfolio site built with Next.js and Tailwind CSS"
-                  icon="🎨"
-                  year="2025"
-                  category="Frontend"
-                />
-                <ProjectCard
-                  title="Dripanomics Tutorials"
-                  description="Website for a Johannesburg based tutoring company built with React.js"
-                  icon="📝"
-                  year="2023"
-                  category="Backend"
-                />
+                {projects.map((project) => (
+                  <ProjectCard
+                    key={project.id}
+                    id={project.id}
+                    title={project.title}
+                    description={project.description}
+                    icon={project.icon}
+                    year={project.year}
+                    category={project.category}
+                  />
+                ))}
               </div>
             </section>
 
